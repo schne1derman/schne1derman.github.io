@@ -23,10 +23,9 @@
                       placeholder="Enter password">
         </b-form-input>
       </b-form-group>
-      <b-button type="submit" variant="primary">Login</b-button>
+      <b-button type="submit" variant="success">Signup</b-button>
       <br><br>
-      <b-link :to="'Signup'">Not a user yet? Join Here!</b-link>
-  </b-form>
+    </b-form>
   </b-col>
   </b-row>
   </b-container>
@@ -34,7 +33,7 @@
 
 <script>
 export default {
-  name: "Login",
+  name: "Signup",
   data() {
     return {
       form: {
