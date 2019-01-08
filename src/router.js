@@ -17,12 +17,12 @@ export default new Router({
       component: () => import("./views/Login.vue")
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("./views/About.vue")
+      path: "/createroom",
+      name: "createroom",
+      component: () => import("./views/CreateRoom.vue")
     },
     {
-      path: "/Signup",
+      path: "/signup",
       name: "signup",
       component: () => import("./views/Signup.vue")
     }

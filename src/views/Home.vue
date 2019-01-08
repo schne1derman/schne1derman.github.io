@@ -1,18 +1,42 @@
 <template>
-<div class="home">
-  <img alt="Vue logo" src="../assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App" />
-</div>
+  <b-container>
+    <b-carousel id="carousel"
+                style="text-shadow: 1px 1px 2px #333;"
+                controls
+                indicators
+                background="#ababab"
+                :interval="4000"
+                img-width="4000"
+                img-height="2020"
+                v-model="slide">
+                <b-carousel-slide caption="First slide"
+                                       text="this is a duck."
+                                       img-src= "../assets/pictures/test1.png">
+                </b-carousel-slide>
+                <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                    eros felis, tincidunt a tincidunt eget, convallis vel est. Ut pellentesque
+                    ut lacus vel interdum.
+                  </p>
+                </b-carousel-slide>
+      </b-carousel>
+</b-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
-  name: "home",
-  components: {
-    HelloWorld
+  data() {
+    return {
+      slide: 0,
+      sliding: null
+    };
   }
 };
 </script>
+
+<style>
+body {
+  background-color: #ff7272;
+}
+</style>

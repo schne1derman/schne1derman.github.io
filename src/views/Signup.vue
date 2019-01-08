@@ -1,7 +1,7 @@
 <template>
-  <b-container class="pt-5">
+  <b-container class="pt-5 signup">
     <b-row class="justify-content-center">
-    <b-col cols="8" class="border border-danger">
+    <b-col cols="8" class="border border-danger bg-white">
     <b-form @submit= "onSubmit">
       <b-form-group id="emailInput"
                     label="Email address:"
@@ -50,3 +50,9 @@ export default {
   }
 };
 </script>
+
+<style>
+body {
+  background-color: #ff7272;
+}
+</style>
