@@ -10,8 +10,8 @@
                 img-height="2020"
                 v-model="slide">
                 <b-carousel-slide caption="First slide"
-                                       text="this is a duck."
-                                       img-src= "../assets/pictures/test1.png">
+                                  text="this is a duck."
+                                  img-src= "../src/assets/pictures/Berg_Hall.jpg">
                 </b-carousel-slide>
                 <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
                   <p>
@@ -37,6 +37,6 @@ export default {
 
 <style>
 body {
-  background-color: #ff7272;
+  background-color: #ed9a9a;
 }
 </style>

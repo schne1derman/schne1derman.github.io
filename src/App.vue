@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div id="app">
     <div id="nav">
     <b-navbar toggleable="md" type="dark" variant="danger">
@@ -26,6 +27,7 @@
     </div>
     <router-view/>
   </div>
+</div>
 </template>
 
 <style>

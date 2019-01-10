@@ -23,6 +23,25 @@
                       placeholder="Enter password">
         </b-form-input>
       </b-form-group>
+      <b-form-group id="repasswordInput"
+                    label="Re-enter Password:"
+                    label-for="repasswordInput">
+        <b-form-input id="repasswordInput"
+                      type="password"
+                      v-model="form.repassword"
+                      required
+                      placeholder=" Re-Enter password">
+        </b-form-input>
+      </b-form-group>
+      <b-form-group id="yearInput"
+            label="What year are you?:"
+            label-for="yearInput">
+          <b-form-select id="yearInput"
+              :options="years"
+              required
+              v-model="form.year">
+          </b-form-select>
+        </b-form-group>
       <b-button type="submit" variant="success">Signup</b-button>
       <br><br>
     </b-form>
@@ -38,8 +57,17 @@ export default {
     return {
       form: {
         email: "",
-        password: ""
-      }
+        password: "",
+        repassword: ""
+      },
+      years: [
+        { text: "Select One", value: null },
+        "Freshman",
+        "Sophmore",
+        "Junior",
+        "Senior"
+      ],
+      show: true
     };
   },
   methods: {
@@ -53,6 +81,6 @@ export default {
 
 <style>
 body {
-  background-color: #ff7272;
+  background-color: #ed9a9a;
 }
 </style>
