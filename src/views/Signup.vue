@@ -30,7 +30,7 @@
                       type="password"
                       v-model="form.repassword"
                       required
-                      placeholder=" Re-Enter password">
+                      placeholder="Re-Enter password">
         </b-form-input>
       </b-form-group>
       <b-form-group id="yearInput"
@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
   name: "Signup",
   data() {
@@ -71,9 +73,18 @@ export default {
     };
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      alert(JSON.stringify(this.form));
+    signUp: function() {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(
+          function(user) {
+            alert("Your account has been created!");
+          },
+          function(err) {
+            alert("Something went wrong.." + err.message);
+          }
+        );
     }
   }
 };
