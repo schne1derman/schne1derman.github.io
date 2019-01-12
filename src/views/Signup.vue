@@ -2,7 +2,7 @@
   <b-container class="pt-5 signup">
     <b-row class="justify-content-center">
     <b-col cols="8" class="border border-danger bg-white">
-    <b-form @submit= "onSubmit">
+    <b-form @submit= "SignUp">
       <b-form-group id="emailInput"
                     label="Email address:"
                     label-for="emailInput">
@@ -42,7 +42,7 @@
               v-model="form.year">
           </b-form-select>
         </b-form-group>
-      <b-button type="submit" variant="success">Signup</b-button>
+      <b-button @click="signUpAction" type="button" variant="success" >Signup</b-button>
       <br><br>
     </b-form>
   </b-col>
@@ -54,13 +54,14 @@
 import firebase from "firebase";
 
 export default {
-  name: "Signup",
+  name: "signUp",
   data() {
     return {
       form: {
         email: "",
         password: "",
-        repassword: ""
+        repassword: "",
+        year: ""
       },
       years: [
         { text: "Select One", value: null },
@@ -73,13 +74,13 @@ export default {
     };
   },
   methods: {
-    signUp: function() {
+    signUpAction: function() {
       firebase
         .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
+        .createUserWithEmailAndPassword(this.form.email, this.form.password)
         .then(
           function(user) {
-            alert("Your account has been created!");
+            alert("Your account has been created " - user);
           },
           function(err) {
             alert("Something went wrong.." + err.message);

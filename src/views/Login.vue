@@ -1,3 +1,4 @@
+import firebase from "firebase"
 <template>
   <b-container class="pt-5 login">
     <b-row class="justify-content-center">
@@ -23,7 +24,7 @@
                       placeholder="Enter password">
         </b-form-input>
       </b-form-group>
-      <b-button type="submit" variant="primary">Login</b-button>
+      <b-button @click= "loginAction" type="button" variant="success">Login</b-button>
       <br><br>
       <b-link :to="'Signup'">Not a user yet? Join Here!</b-link>
   </b-form>
@@ -33,8 +34,10 @@
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
-  name: "Login",
+  name: "login",
   data() {
     return {
       form: {
@@ -44,9 +47,18 @@ export default {
     };
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      alert(JSON.stringify(this.form));
+    loginAction: function() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.form.email, this.form.password)
+        .then(
+          function(user) {
+            alert("Well done you are now connected " + user);
+          },
+          function(err) {
+            alert("Something went wrong.." + err.message);
+          }
+        );
     }
   }
 };

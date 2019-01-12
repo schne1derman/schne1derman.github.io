@@ -14,7 +14,7 @@ var config = {
   authDomain: "virtual-platdorms.firebaseapp.com",
   databaseURL: "https://virtual-platdorms.firebaseio.com",
   projectId: "virtual-platdorms",
-  storageBucket: "",
+  storageBucket: "virtual-platdorms.appspot.com",
   messagingSenderId: "416051239684"
 };
 
