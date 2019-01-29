@@ -2,9 +2,10 @@
   <div>
   <div id="app">
     <div id="nav">
+    <h1>VIRTUAL PLATDORMS </h1>
     <b-navbar toggleable="md" type="dark" variant="danger">
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-    <b-navbar-brand :to="'/'">Virtual PlatDorms</b-navbar-brand>
+    <b-navbar-brand :to="'home'">About</b-navbar-brand>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
         <b-nav-item :to="'/createroom'">Create Room</b-nav-item>

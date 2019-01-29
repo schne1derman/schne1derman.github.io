@@ -1,7 +1,10 @@
 <template>
-  <div class="about">
-  <h1> hi bob </h1>
-  <img src ="../assets/pictures/Berg_Hall.jpg" class="float-right" style="width:500px;height:280px;">
+  <div>
+    <b-embed type="iframe"
+             aspect="16by9"
+             src="https://3dwarehouse.sketchup.com/embed.html?mid=edaac701-f360-46ca-a9c4-56d30bef1928"
+             allowfullscreen
+    ></b-embed>
   </div>
 </template>
 

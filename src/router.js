@@ -9,18 +9,20 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
+      path: "/home",
       name: "home",
-      component: () => import("./views/Home.vue")
-    },
-    {
-      path: "*",
-      redirect: "/"
+      component: () => import("./views/Home.vue"),
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: "/login",
       name: "login",
-      component: () => import("./views/Login.vue")
+      component: () => import("./views/Login.vue"),
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: "/createroom",
@@ -33,7 +35,10 @@ const router = new Router({
     {
       path: "/signup",
       name: "signup",
-      component: () => import("./views/Signup.vue")
+      component: () => import("./views/Signup.vue"),
+      meta: {
+        requiresAuth: false
+      }
     }
   ]
 });
@@ -43,7 +48,6 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next("login");
-  else if (!requiresAuth && currentUser) next("home");
   else next();
 });
 
