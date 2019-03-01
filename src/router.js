@@ -9,6 +9,14 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: "/",
+      name: "welcome",
+      component: () => import("./views/Welcome.vue"),
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
       path: "/home",
       name: "home",
       component: () => import("./views/Home.vue"),

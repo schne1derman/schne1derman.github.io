@@ -1,4 +1,3 @@
-import firebase from "firebase"
 <template>
   <b-container class="pt-5 login">
     <b-row class="justify-content-center">
