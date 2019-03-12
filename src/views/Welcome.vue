@@ -4,9 +4,3 @@
     <b-button variant="primary" :to="'/home'">Enter</b-button>
   </b-jumbotron>
 </template>
-
-<style>
-body {
-  background-color: #ed9a9a;
-}
-</style>
