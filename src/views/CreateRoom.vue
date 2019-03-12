@@ -5,7 +5,7 @@
       <b-row>
         <b-col>
           <a href="/room">
-          <img src="../assets/pictures/Roncalli.jpg" alt="Image 1" style="width:150px;height:150px;"/>
+          <img src="../assets/pictures/SetonHall.png" alt="Image 1" style="width:150px;height:150px;"/>
           </a>
         </b-col>
         <b-col>

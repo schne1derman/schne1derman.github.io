@@ -4,6 +4,7 @@
              src="https://3dwarehouse.sketchup.com/embed.html?mid=edaac701-f360-46ca-a9c4-56d30bef1928"
              allowfullscreen
     ></b-embed>
+
 </template>
 
 <style>
