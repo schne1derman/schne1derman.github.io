@@ -9,6 +9,11 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: "*",
+      name: "login",
+      component: () => import("./views/Login.vue")
+    },
+    {
       path: "/",
       name: "welcome",
       component: () => import("./views/Welcome.vue"),
@@ -27,9 +32,14 @@ const router = new Router({
     {
       path: "/login",
       name: "login",
-      component: () => import("./views/Login.vue"),
+      component: () => import("./views/Login.vue")
+    },
+    {
+      path: "/room",
+      name: "room",
+      component: () => import("./views/Room.vue"),
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -43,10 +53,7 @@ const router = new Router({
     {
       path: "/signup",
       name: "signup",
-      component: () => import("./views/Signup.vue"),
-      meta: {
-        requiresAuth: false
-      }
+      component: () => import("./views/Signup.vue")
     }
   ]
 });
@@ -56,6 +63,7 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next("login");
+  else if (!requiresAuth && currentUser) next("home");
   else next();
 });
 

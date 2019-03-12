@@ -6,12 +6,10 @@
                 indicators
                 background="#ababab"
                 :interval="4000"
-                img-width="4000"
-                img-height="2020"
                 v-model="slide">
                 <b-carousel-slide caption="First slide"
                                   text="this is a duck."
-                                  img-src= "../src/assets/pictures/Berg_Hall.jpg">
+                                  img-src= "../src/assets/pictures/Tusant.jpg">
                 </b-carousel-slide>
                 <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
                   <p>

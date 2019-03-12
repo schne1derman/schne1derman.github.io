@@ -1,6 +1,27 @@
 <template>
   <div>
   <div id="app">
+    <div id="nav">
+    <h1>VIRTUAL PLATDORMS </h1>
+    <b-navbar toggleable="md" type="dark" variant="danger">
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <b-navbar-brand router-link to="/home">Home</b-navbar-brand>
+    <b-collapse is-nav id="nav_collapse">
+      <b-navbar-nav>
+        <b-nav-item router-link to ="/createroom">Create Room</b-nav-item>
+      </b-navbar-nav>
+      <b-navbar-nav class="ml-auto">
+      <b-nav-item-dropdown right>
+          <template slot="button-content">
+            <em>User</em>
+          </template>
+          <b-dropdown-item router-link to="/profile">Profile</b-dropdown-item>
+          <b-dropdown-item router-link to="">Signout</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+    </div>
     <router-view/>
   </div>
 </div>
