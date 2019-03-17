@@ -10,6 +10,9 @@
       <b-navbar-nav>
         <b-nav-item router-link to ="/createroom">Create Room</b-nav-item>
       </b-navbar-nav>
+      <b-navbar-nav>
+        <b-nav-item router-link to ="/support">Support</b-nav-item>
+      </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
       <b-nav-item-dropdown right>
           <template slot="button-content">

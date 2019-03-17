@@ -7,8 +7,8 @@
     indicators
     background="#ababab"
     :interval="4000"
-    img-width="1024"
-    img-height="480"
+    img-width="100"
+    img-height="50"
     v-model="slide"
     @sliding-start="onSlideStart"
     @sliding-end="onSlideEnd"
@@ -34,8 +34,8 @@
       <img
         slot="img"
         class="d-block img-fluid w-100"
-        width="1024"
-        height="480"
+        width="100"
+        height="50"
         src="https://picsum.photos/1024/480/?image=55"
         alt="image slot"
       />
