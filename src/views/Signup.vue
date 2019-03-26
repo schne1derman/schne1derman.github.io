@@ -8,8 +8,7 @@
                     label-for="emailInput">
         <b-form-input id="emailInput"
                       type="email"
-                      v-model="form.email"
-                      required
+                      v-model="email"
                       placeholder="Enter email">
         </b-form-input>
       </b-form-group>
@@ -18,19 +17,8 @@
                     label-for="passwordInput">
         <b-form-input id="passwordInput"
                       type="password"
-                      v-model="form.password"
-                      required
+                      v-model="password"
                       placeholder="Enter password">
-        </b-form-input>
-      </b-form-group>
-      <b-form-group id="repasswordInput"
-                    label="Re-enter Password:"
-                    label-for="repasswordInput">
-        <b-form-input id="repasswordInput"
-                      type="password"
-                      v-model="form.repassword"
-                      required
-                      placeholder="Re-Enter password">
         </b-form-input>
       </b-form-group>
       <b-form-group id="yearInput"
@@ -59,18 +47,8 @@ export default {
     return {
       form: {
         email: "",
-        password: "",
-        repassword: "",
-        year: ""
-      },
-      years: [
-        { text: "Select One", value: null },
-        "Freshman",
-        "Sophmore",
-        "Junior",
-        "Senior"
-      ],
-      show: true
+        password: ""
+      }
     };
   },
   methods: {
@@ -83,7 +61,7 @@ export default {
             alert("Your account has been created " - user);
           },
           function(err) {
-            alert("Something went wrong.." + err.message);
+            alert("Something went wrong.. " + err.message);
           }
         );
     }

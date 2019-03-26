@@ -8,8 +8,7 @@
                     label-for="emailInput">
         <b-form-input id="emailInput"
                       type="email"
-                      v-model="form.email"
-                      required
+                      v-model="email"
                       placeholder="Enter email">
         </b-form-input>
       </b-form-group>
@@ -18,12 +17,11 @@
                     label-for="passwordInput">
         <b-form-input id="passwordInput"
                       type="password"
-                      v-model="form.password"
-                      required
+                      v-model="password"
                       placeholder="Enter password">
         </b-form-input>
       </b-form-group>
-      <b-button @click= "loginAction" type="button" variant="success">Login</b-button>
+      <b-button @click= "login" type="button" variant="success">Login</b-button>
       <br><br>
       <b-link :to="'Signup'">Not a user yet? Join Here!</b-link>
   </b-form>
@@ -39,22 +37,20 @@ export default {
   name: "login",
   data() {
     return {
-      form: {
-        email: "",
-        password: ""
-      }
+      email: "",
+      password: ""
     };
   },
   methods: {
-    loginAction: function() {
+    login: function() {
       firebase
         .auth()
-        .signInWithEmailAndPassword(this.form.email, this.form.password)
+        .signInWithEmailAndPassword(this.email, this.password)
         .then(
-          function(user) {
-            alert("Well done you are now connected " + user);
+          user => {
+            this.$router.replace("/home") + user;
           },
-          function(err) {
+          err => {
             alert("Something went wrong.." + err.message);
           }
         );

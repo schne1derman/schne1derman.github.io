@@ -1,5 +1,4 @@
 <template>
-  <div>
   <div id="app">
     <div id="nav">
     <h1>VIRTUAL PLATDORMS </h1>
@@ -14,7 +13,7 @@
         <b-nav-item router-link to="/support">Support</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav right>
-        <b-nav-item router-link to="/login">User</b-nav-item>
+        <b-nav-item router-link to="/login">{{form.email}}</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
       </b-navbar-nav>
@@ -23,7 +22,6 @@
     </div>
     <router-view/>
   </div>
-</div>
 </template>
 
 <style>

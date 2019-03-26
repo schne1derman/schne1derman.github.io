@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+//import store from "./store";
 import firebase from "firebase";
 import BootstrapVue from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
@@ -18,17 +18,18 @@ var config = {
   messagingSenderId: "416051239684"
 };
 
-firebase.initializeApp(config);
-
 Vue.config.productionTip = false;
+
+firebase.initializeApp(config);
 
 new Vue({
   router,
-  store,
   render: h => h(App)
 }).$mount("#app");
 
 let app = "";
+
+/****User status****/
 
 firebase.auth().onAuthStateChanged(() => {
   if (!app) {
@@ -38,3 +39,17 @@ firebase.auth().onAuthStateChanged(() => {
     }).$mount("#app");
   }
 });
+
+/*****database
+const database = firebase.initializeApp(config);
+database.signUp = async (email, password) => {
+  try {
+    await firebase.auth().createUserWithEmailAndPassword(email, password);
+    store.commit("setCurrentUser", firebase.auth().currentUser);
+
+    return true;
+  } catch (error) {
+    return error;
+  }
+};
+export default database;****/

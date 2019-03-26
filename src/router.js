@@ -2,6 +2,13 @@ import Vue from "vue";
 import Router from "vue-router";
 import firebase from "firebase";
 
+import Home from "@/views/Home.vue";
+import Login from "@/views/Login.vue";
+import Welcome from "@/views/Welcome.vue";
+import Room from "@/views/Room.vue";
+import CreateRoom from "@/views/CreateRoom.vue";
+import Signup from "@/views/Signup.vue";
+import Support from "@/views/Support.vue";
 Vue.use(Router);
 
 const router = new Router({
@@ -16,7 +23,7 @@ const router = new Router({
     {
       path: "/",
       name: "welcome",
-      component: () => import("./views/Welcome.vue"),
+      component: Welcome,
       meta: {
         requiresAuth: true
       }
@@ -24,7 +31,7 @@ const router = new Router({
     {
       path: "/home",
       name: "home",
-      component: () => import("./views/Home.vue"),
+      component: Home,
       meta: {
         requiresAuth: true
       }
@@ -32,33 +39,33 @@ const router = new Router({
     {
       path: "/login",
       name: "login",
-      component: () => import("./views/Login.vue")
+      component: Login
     },
     {
       path: "/room",
       name: "room",
-      component: () => import("./views/Room.vue"),
-      meta: {
-        requiresAuth: true
-      }
+      component: Room
+      //  meta: {
+      //    requiresAuth: true
+      //  }
     },
     {
       path: "/createroom",
       name: "createroom",
-      component: () => import("./views/CreateRoom.vue"),
-      meta: {
-        requiresAuth: true
-      }
+      component: CreateRoom
+      //  meta: {
+      //    requiresAuth: true
+      //  }
     },
     {
       path: "/signup",
       name: "signup",
-      component: () => import("./views/Signup.vue")
+      component: Signup
     },
     {
       path: "/support",
       name: "support",
-      component: () => import("./views/Support.vue")
+      component: Support
     }
   ]
 });
@@ -68,7 +75,7 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next("login");
-  //else if (!requiresAuth && currentUser) next("home");
+  else if (!requiresAuth && currentUser) next("home");
   else next();
 });
 
