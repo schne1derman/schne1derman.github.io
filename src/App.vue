@@ -14,7 +14,7 @@
         <b-nav-item router-link to="/support">Support</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav right>
-        <b-nav-item router-link to="/login">User</b-nav-item>
+        <b-nav-item router-link to="/login">{{currentUser}}</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
       </b-navbar-nav>
@@ -44,5 +44,8 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+body {
+  background-color: #ed9a9a;
 }
 </style>

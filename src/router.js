@@ -31,10 +31,10 @@ const router = new Router({
     {
       path: "/home",
       name: "home",
-      component: Home,
-      meta: {
-        requiresAuth: true
-      }
+      component: Home
+      //meta: {
+      //  requiresAuth: true
+      //}
     },
     {
       path: "/login",

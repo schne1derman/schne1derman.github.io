@@ -1,10 +1,5 @@
 <template>
-    <b-embed type="iframe"
-             aspect="16by9"
-             src="https://3dwarehouse.sketchup.com/embed.html?mid=edaac701-f360-46ca-a9c4-56d30bef1928"
-             allowfullscreen
-    ></b-embed>
-
+<iframe src="https://3dwarehouse.sketchup.com/embed.html?mid=cbc918db-3f82-4138-88c7-3473787a035b" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe>
 </template>
 
 <style>
