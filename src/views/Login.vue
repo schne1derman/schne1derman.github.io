@@ -48,7 +48,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            this.$router.replace("home"), console.log(user);
+            this.$router.replace("/home"), console.log(user);
           },
           err => {
             alert("Something went wrong.." + err.message);

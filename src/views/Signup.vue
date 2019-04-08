@@ -3,6 +3,9 @@
     <b-row class="justify-content-center">
     <b-col cols="8" class="border border-danger bg-white">
     <b-form @submit= "SignUp">
+      <b-form-group id="hello"
+                    label="Welcome!">
+      </b-form-group>
       <b-form-group id="emailInput"
                     label="Email address:"
                     label-for="emailInput">
@@ -21,7 +24,7 @@
                       placeholder="Enter password">
         </b-form-input>
       </b-form-group>
-      <b-button @click="signUpAction" type="button" variant="success" >Signup</b-button>
+      <b-button @click="signUpAction" type="button" block variant="primary">Signup</b-button>
       <br><br>
     </b-form>
   </b-col>
