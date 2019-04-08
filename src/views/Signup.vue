@@ -21,15 +21,6 @@
                       placeholder="Enter password">
         </b-form-input>
       </b-form-group>
-      <b-form-group id="yearInput"
-            label="What year are you?:"
-            label-for="yearInput">
-          <b-form-select id="yearInput"
-              :options="years"
-              required
-              v-model="form.year">
-          </b-form-select>
-        </b-form-group>
       <b-button @click="signUpAction" type="button" variant="success" >Signup</b-button>
       <br><br>
     </b-form>
@@ -45,20 +36,18 @@ export default {
   name: "signUp",
   data() {
     return {
-      form: {
-        email: "",
-        password: ""
-      }
+      email: "",
+      password: ""
     };
   },
   methods: {
     signUpAction: function() {
       firebase
         .auth()
-        .createUserWithEmailAndPassword(this.form.email, this.form.password)
+        .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           function(user) {
-            alert("Your account has been created " - user);
+            alert("Your account has been created", console.log(user));
           },
           function(err) {
             alert("Something went wrong.. " + err.message);
