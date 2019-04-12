@@ -8,12 +8,6 @@
           <img src="../assets/pictures/SetonHall.png" alt="Image 1" style="width:150px;height:150px;"/>
           </a>
         </b-col>
-        <b-col>
-          <img thumbnail fluid src="../assets/pictures/under_construction.png" alt="Image 2" style="width:150px;height:150px;"/>
-        </b-col>
-        <b-col>
-          <img thumbnail fluid src="../assets/pictures/under_construction.png" alt="Image 3" style="width:150px;height:150px;"/>
-        </b-col>
       </b-row>
     </b-container>
 

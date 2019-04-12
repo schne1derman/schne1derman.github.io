@@ -1,40 +1,15 @@
 <template>
-  <b-container class="pt-5 signup">
-    <b-row class="justify-content-center">
-    <b-col cols="8" class="border border-danger bg-white">
-    <b-form @submit= "SignUp">
-      <b-form-group id="hello"
-                    label="Welcome!">
-      </b-form-group>
-      <b-form-group id="emailInput"
-                    label="Email address:"
-                    label-for="emailInput">
-        <b-form-input id="emailInput"
-                      type="email"
-                      v-model="email"
-                      placeholder="Enter email">
-        </b-form-input>
-      </b-form-group>
-      <b-form-group id="passwordInput"
-                    label="Password:"
-                    label-for="passwordInput">
-        <b-form-input id="passwordInput"
-                      type="password"
-                      v-model="password"
-                      placeholder="Enter password">
-        </b-form-input>
-      </b-form-group>
-      <b-button @click="signUp" type="button" block variant="primary">Signup</b-button>
-      <br><br>
-    </b-form>
-  </b-col>
-  </b-row>
-  </b-container>
+  <div class="sign-up">
+    <p>Let's create a new account !</p>
+    <input type="text" v-model="email" placeholder="Email"><br>
+    <input type="password" v-model="password" placeholder="Password"><br>
+    <button @click="signUp">Sign Up</button>
+    <span>or go back to <router-link to="/login">login</router-link>.</span>
+  </div>
 </template>
 
-<script>
+ <script>
 import firebase from "firebase";
-
 export default {
   name: "signUp",
   data() {
@@ -44,16 +19,16 @@ export default {
     };
   },
   methods: {
-    signUpAction: function() {
+    signUp: function() {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
-          function(user) {
-            alert("Your account has been created", console.log(user));
+          user => {
+            this.$router.replace("login"), console.log(user);
           },
-          function(err) {
-            alert("Something went wrong.. " + err.message);
+          err => {
+            alert("Oops. " + err.message);
           }
         );
     }
@@ -61,7 +36,25 @@ export default {
 };
 </script>
 
-<style>
+ <style scoped>
+.sign-up {
+  margin-top: 40px;
+}
+input {
+  margin: 10px 0;
+  width: 20%;
+  padding: 15px;
+}
+button {
+  margin-top: 10px;
+  width: 10%;
+  cursor: pointer;
+}
+span {
+  display: block;
+  margin-top: 20px;
+  font-size: 11px;
+}
 body {
   background-color: #9abff9;
 }
