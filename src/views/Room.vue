@@ -1,9 +1,13 @@
 <template>
-<iframe src="https://3dwarehouse.sketchup.com/embed.html?mid=90e113ec-01c2-40f2-b6a6-f2315a876519" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe>
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+ <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+ </label>
+ <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+ </label>
+ <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+ </label>
+</div>
 </template>
-
-<style>
-body {
-  background-color: #ed9a9a;
-}
-</style>

@@ -21,7 +21,7 @@
                       placeholder="Enter password">
         </b-form-input>
       </b-form-group>
-      <b-button @click= "login" variant="success">Login</b-button>
+      <button @click="login" variant="success" router-link to="/home">Login</button>
       <br><br>
       <b-link :to="'Signup'">Not a user yet? Join Here!</b-link>
   </b-form>
@@ -61,6 +61,6 @@ export default {
 
 <style>
 body {
-  background-color: #ed9a9a;
+  background-color: #9abff9;
 }
 </style>

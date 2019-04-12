@@ -17,6 +17,6 @@ Comment:<br>
 
 <style>
 body {
-  background-color: #ed9a9a;
+  background-color: #9abff9;
 }
 </style>

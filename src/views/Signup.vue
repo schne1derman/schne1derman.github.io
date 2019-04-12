@@ -24,7 +24,7 @@
                       placeholder="Enter password">
         </b-form-input>
       </b-form-group>
-      <b-button @click="signUpAction" type="button" block variant="primary">Signup</b-button>
+      <b-button @click="signUp" type="button" block variant="primary">Signup</b-button>
       <br><br>
     </b-form>
   </b-col>
@@ -63,6 +63,6 @@ export default {
 
 <style>
 body {
-  background-color: #ed9a9a;
+  background-color: #9abff9;
 }
 </style>
