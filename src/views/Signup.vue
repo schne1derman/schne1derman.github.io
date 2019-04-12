@@ -25,7 +25,7 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            this.$router.replace("login"), console.log(user);
+            this.$router.replace("/login"), console.log(user);
           },
           err => {
             alert("Oops. " + err.message);
@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
- <style scoped>
+<style>
 .sign-up {
   margin-top: 40px;
 }
@@ -54,8 +54,5 @@ span {
   display: block;
   margin-top: 20px;
   font-size: 11px;
-}
-body {
-  background-color: #9abff9;
 }
 </style>

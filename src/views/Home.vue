@@ -15,8 +15,27 @@
   </b-container>
       <br>
       <p>Students moving into dorms at Sacred Heart University do not entirely know what their dorm room will look like before they move in. This leads to a series of problems on move in day.  First students do not know what amenities the room offers already and might move in without bringing something from home because they thought the room would have it already. Alternatively, there are students that bring too much stuff with them on move in day.  They might bring a fan along with their roommate. Now the students are left with too many fans and items are just left to clutter the room. Lastly, there is little to no communication between students on what each person is bringing to the room. Thus items are left out and students are forced to find their local Target to try and get something to fit their needs.</p>
+
+<button @click="logout">Logout</button>
 </div>
 </template>
+
+<script>
+import firebase from "firebase";
+export default {
+  name: "home",
+  methods: {
+    logout: function() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace("login");
+        });
+    }
+  }
+};
+</script>
 
 <style>
 body {

@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <h5>Desk</h5>
     <b-button-group size="sm">
       <b-button
