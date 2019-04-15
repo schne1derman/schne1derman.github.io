@@ -4,7 +4,7 @@
     <b-container fluid class="p-4 bg-red">
       <b-row>
         <b-col>
-          <a href="/room">
+          <a href="/setuproom">
           <img src="../assets/pictures/SetonHall.png" alt="Image 1" style="width:150px;height:150px;"/>
           </a>
         </b-col>
@@ -96,6 +96,6 @@
 
 <style>
 body {
-  background-color: #9abff9;
+  background-color: #caebf2;
 }
 </style>

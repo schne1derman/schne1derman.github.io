@@ -5,7 +5,6 @@ import firebase from "firebase";
 import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
 import Welcome from "@/views/Welcome.vue";
-import Room from "@/views/Room.vue";
 import CreateRoom from "@/views/CreateRoom.vue";
 import Signup from "@/views/Signup.vue";
 import Support from "@/views/Support.vue";
@@ -39,14 +38,6 @@ const router = new Router({
       path: "/login",
       name: "login",
       component: Login
-    },
-    {
-      path: "/room",
-      name: "room",
-      component: Room,
-      meta: {
-        requiresAuth: true
-      }
     },
     {
       path: "/createroom",
