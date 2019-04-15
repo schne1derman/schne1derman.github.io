@@ -36,8 +36,8 @@ export default {
 };
 </script>
 
-<style>
-.sign-up {
+<style scoped>
+.login {
   margin-top: 40px;
 }
 input {
@@ -46,13 +46,16 @@ input {
   padding: 15px;
 }
 button {
-  margin-top: 10px;
+  margin-top: 20px;
   width: 10%;
   cursor: pointer;
 }
-span {
-  display: block;
-  margin-top: 20px;
-  font-size: 11px;
+p {
+  margin-top: 40px;
+  font-size: 13px;
+}
+p a {
+  text-decoration: underline;
+  cursor: pointer;
 }
 </style>

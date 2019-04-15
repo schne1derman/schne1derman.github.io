@@ -9,6 +9,8 @@ import Room from "@/views/Room.vue";
 import CreateRoom from "@/views/CreateRoom.vue";
 import Signup from "@/views/Signup.vue";
 import Support from "@/views/Support.vue";
+import SetupRoom from "@/views/SetupRoom.vue";
+
 Vue.use(Router);
 
 const router = new Router({
@@ -17,16 +19,13 @@ const router = new Router({
   routes: [
     {
       path: "*",
-      name: "login",
-      component: () => import("./views/Login.vue")
+      name: "welcome",
+      component: () => import("./views/Welcome.vue")
     },
     {
       path: "/welcome",
       name: "welcome",
-      component: Welcome,
-      meta: {
-        requiresAuth: true
-      }
+      component: Welcome
     },
     {
       path: "/home",
@@ -69,6 +68,11 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: "/setuproom",
+      name: "setuproom",
+      component: SetupRoom
     }
   ]
 });
